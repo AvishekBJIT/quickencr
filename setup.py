@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="quickencr",
-    version="0.1.0",
+    version="0.1.1",
     description="A simple library for encrypting and decrypting text and files.",
     author="Avishek Agarwla",
     author_email="avigreat29@gmail.com.com",
