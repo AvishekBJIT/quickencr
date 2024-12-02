@@ -10,7 +10,7 @@ def generate_key() -> bytes:
     return Fernet.generate_key()
 
 
-def encrypt_message(message: str) -> bytes:
+def encrypt_message(message: str ,key) -> bytes:
     """
     Encrypt a text message.
     Args:
@@ -19,12 +19,11 @@ def encrypt_message(message: str) -> bytes:
     Returns:
         bytes: The encrypted message.
     """
-    key=generate_key()
     cipher = Fernet(key)
     return cipher.encrypt(message.encode())
 
 
-def decrypt_message(token: bytes) -> str:
+def decrypt_message(token: bytes ,key) -> str:
     """
     Decrypt an encrypted message.
     Args:
@@ -33,7 +32,6 @@ def decrypt_message(token: bytes) -> str:
     Returns:
         str: The decrypted message.
     """
-    key=generate_key()
     cipher = Fernet(key)
     return cipher.decrypt(token).decode()
 
